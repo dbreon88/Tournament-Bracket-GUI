@@ -53,40 +53,58 @@ public class Main extends Application {
         borderPane.setTop(title);
         borderPane.setAlignment(title, Pos.CENTER);
 		
-		        Label info = new Label();
+        Label info = new Label();
         info.setMinHeight(100);
         info.setText("INSTRUCTIONS:\n-For each game: Enter each team's score then click submit button between the two teams.\n-After completing all games for a round, move on to next round and repeat process to enter teams' scores.\n After submitting the scores for the championship game the top three contenders will be displayed!");
         info.setFont(Font.font("Ariel", 15));
         borderPane.setBottom(info);
         borderPane.setAlignment(info, Pos.CENTER);
 
+        Label round1 = new Label();
+        round1.setMinHeight(25);
+        round1.setText("Round 1");
+
+        Label round2 = new Label();
+        round2.setMinHeight(25);
+        round2.setText("Round 2");
+
 		Label label1 = new Label();
 		label1.setMinHeight(25);
-		label1.setText("Team1: ");
+		label1.setText("Team 1: ");
 
 		Label label2 = new Label();
 		label2.setMinHeight(25);
-		label2.setText("Team2: ");
+		label2.setText("Team 2: ");
 
 		Label label3 = new Label();
 		label3.setMinHeight(25);
-		label3.setText("Team3: ");
+		label3.setText("Team 3: ");
 
 		Label label4 = new Label();
 		label4.setMinHeight(25);
-		label4.setText("Team4: ");
+		label4.setText("Team 4: ");
 
 		Label winner1 = new Label();
 		winner1.setMinHeight(25);
-		winner1.setText("Winner1: ");
+		winner1.setText("Winner 1: ");
 
 		Label winner2 = new Label();
 		winner2.setMinHeight(25);
-		winner2.setText("Winner2: ");
+		winner2.setText("Winner 2: ");
 
 		Label champ = new Label();
 		champ.setMinHeight(25);
-		champ.setText("Champion: ");
+		champ.setText("Champion:");
+
+		Label runnerUp = new Label();
+		runnerUp.setMinHeight(25);
+		runnerUp.setText("Runner Up:");
+
+
+		Label third = new Label();
+		third.setMinHeight(25);
+		third.setText("Third Place:");
+
 
 		Label empty1 = new Label();
 		empty1.setMinHeight(200);
@@ -95,22 +113,26 @@ public class Main extends Application {
 
 		Label empty2 = new Label();
 		empty2.setMinHeight(200);
-		empty2.setMinWidth(50);
+		empty2.setMinWidth(100);
 		empty2.setText(" ");
 
 		Label empty3 = new Label();
 		empty3.setMinHeight(200);
-		empty3.setMinWidth(50);
+		empty3.setMinWidth(100);
 		empty3.setText(" ");
 
+		Label empty4 = new Label();
+		empty4.setMaxHeight(300);
+		empty4.setText(" ");
+
 		Button submit1 = new Button();
-		submit1.setText("Submit Team1 vs. Team2");
+		submit1.setText("Submit Team 1 vs. Team 2");
 
 		Button submit2 = new Button();
-		submit2.setText("Submit Team3 vs. Team4");
+		submit2.setText("Submit Team 3 vs. Team 4");
 
 		Button submit3 = new Button();
-		submit3.setText("Submit Winner1 vs Winner2");
+		submit3.setText("Submit Winner 1 vs Winner 2");
 
 		//Event Handle
 
@@ -145,33 +167,40 @@ public class Main extends Application {
 		input6.setFocusTraversable(false);
 
 
-		gPane.add(label1, 0, 0);
-		gPane.add(label2,0, 2);
-		gPane.add(label3,0, 6);
-		gPane.add(label4, 0, 8);
+		gPane.add(round1, 0, 0);
+		gPane.add(round2, 3, 0);
 
-		gPane.add(empty1, 0, 4);
-		gPane.add(empty2, 2, 0,1, 7);
-		gPane.add(empty3, 5, 0, 1, 7);
+		gPane.add(empty4, 0, 1, 7, 1);
+
+		gPane.add(label1, 0, 2);
+		gPane.add(label2,0, 4);
+		gPane.add(label3,0, 8);
+		gPane.add(label4, 0, 10);
+
+		gPane.add(empty1, 0, 6);
+		gPane.add(empty2, 2, 2,1, 7);
+		gPane.add(empty3, 5, 2, 1, 7);
 
 
-		gPane.add(submit1,0, 1, 2, 1);
-		gPane.add(submit2,0, 7, 2, 1);
-		gPane.add(submit3, 3, 4,2,1);
+		gPane.add(submit1,0, 3, 2, 1);
+		gPane.add(submit2,0, 9, 2, 1);
+		gPane.add(submit3, 3, 6,2,1);
 
 
-		gPane.add(input1, 1, 0);
-		gPane.add(input2, 1, 2);
-		gPane.add(input3, 1, 6);
-		gPane.add(input4, 1, 8);
+		gPane.add(input1, 1, 2);
+		gPane.add(input2, 1, 4);
+		gPane.add(input3, 1, 8);
+		gPane.add(input4, 1, 10);
 
-		gPane.add(winner1, 3, 1);
-		gPane.add(winner2, 3, 7);
+		gPane.add(winner1, 3, 3);
+		gPane.add(winner2, 3, 9);
 
-		gPane.add(input5, 4, 1);
-		gPane.add(input6, 4, 7);
+		gPane.add(input5, 4, 3);
+		gPane.add(input6, 4, 9);
 
-		gPane.add(champ, 6, 4);
+		gPane.add(champ, 6, 6);
+		gPane.add(runnerUp, 6, 12);
+		gPane.add(third, 6, 13);
 
 
 
