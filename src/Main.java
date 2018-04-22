@@ -60,6 +60,15 @@ public class Main extends Application {
 		label4.setMinHeight(25);
 		label4.setText("Team4: ");
 
+		Label empty1 = new Label();
+		empty1.setMinHeight(200);
+		empty1.setMinWidth(100);
+		empty1.setText(" ");
+
+		Label empty2 = new Label();
+		empty2.setMinHeight(200);
+		empty2.setMinWidth(100);
+		empty2.setText(" ");
 
 		Button submit1 = new Button();
 		submit1.setText("Submit");
@@ -75,18 +84,37 @@ public class Main extends Application {
 		input1.setFocusTraversable(false);
 
 		TextField input2 = new TextField();
-		input2.setMaxHeight(20); input1.setMaxWidth(200);
+		input2.setMaxHeight(20); input2.setMaxWidth(200);
 		input2.setPromptText("Team 2");
 		input2.setFocusTraversable(false);
 
+		TextField input3 = new TextField();
+		input3.setMaxHeight(20); input3.setMaxWidth(200);
+		input3.setPromptText("Score 3");
+		input3.setFocusTraversable(false);
+
+		TextField input4 = new TextField();
+		input4.setMaxHeight(20); input4.setMaxWidth(200);
+		input4.setPromptText("Team 4");
+		input4.setFocusTraversable(false);
 
 
 		gPane.add(label1, 0, 0);
-		gPane.add(submit1,0, 1);
 		gPane.add(label2,0, 2);
 		gPane.add(label3,0, 6);
-		gPane.add(submit2,0, 7);
 		gPane.add(label4, 0, 8);
+
+		gPane.add(empty1, 0, 3, 2, 3);
+		gPane.add(empty2, 2, 0,1, 8);
+
+
+		gPane.add(submit2,0, 7);
+		gPane.add(submit1,0, 1);
+
+		gPane.add(input1, 1, 0);
+		gPane.add(input2, 1, 2);
+		gPane.add(input3, 1, 6);
+		gPane.add(input4, 1, 8);
 
 
 		primaryStage.setScene(scene);
