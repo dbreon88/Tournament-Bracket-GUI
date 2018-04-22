@@ -43,6 +43,7 @@ public class Main extends Application {
 		GridPane gPane = new GridPane();
 		gPane.setGridLinesVisible(false);
 		borderPane.setCenter(gPane);
+		gPane.setAlignment(Pos.CENTER);
 		Scene scene = new Scene(borderPane, 1600, 900, Color.DARKGRAY);
 		
 		 Label title = new Label();
@@ -76,6 +77,10 @@ public class Main extends Application {
 		winner2.setMinHeight(25);
 		winner2.setText("Winner2: ");
 
+		Label champ = new Label();
+		champ.setMinHeight(25);
+		champ.setText("Champion: ");
+
 		Label empty1 = new Label();
 		empty1.setMinHeight(200);
 		empty1.setMinWidth(50);
@@ -86,11 +91,19 @@ public class Main extends Application {
 		empty2.setMinWidth(50);
 		empty2.setText(" ");
 
+		Label empty3 = new Label();
+		empty3.setMinHeight(200);
+		empty3.setMinWidth(50);
+		empty3.setText(" ");
+
 		Button submit1 = new Button();
-		submit1.setText("Submit");
+		submit1.setText("Submit Team1 vs. Team2");
 
 		Button submit2 = new Button();
-		submit2.setText("Submit");
+		submit2.setText("Submit Team3 vs. Team4");
+
+		Button submit3 = new Button();
+		submit3.setText("Submit Winner1 vs Winner2");
 
 		//Event Handle
 
@@ -121,7 +134,7 @@ public class Main extends Application {
 
 		TextField input6 = new TextField();
 		input6.setMaxHeight(20); input6.setMaxWidth(200);
-		input6.setPromptText("Score 2");
+		input6.setPromptText("Score 6");
 		input6.setFocusTraversable(false);
 
 
@@ -130,12 +143,15 @@ public class Main extends Application {
 		gPane.add(label3,0, 6);
 		gPane.add(label4, 0, 8);
 
-		gPane.add(empty1, 0, 3, 2, 3);
-		gPane.add(empty2, 2, 0,1, 8);
+		gPane.add(empty1, 0, 4);
+		gPane.add(empty2, 2, 0,1, 7);
+		gPane.add(empty3, 5, 0, 1, 7);
 
 
-		gPane.add(submit2,0, 7);
-		gPane.add(submit1,0, 1);
+		gPane.add(submit1,0, 1, 2, 1);
+		gPane.add(submit2,0, 7, 2, 1);
+		gPane.add(submit3, 3, 4,2,1);
+
 
 		gPane.add(input1, 1, 0);
 		gPane.add(input2, 1, 2);
@@ -147,6 +163,9 @@ public class Main extends Application {
 
 		gPane.add(input5, 4, 1);
 		gPane.add(input6, 4, 7);
+
+		gPane.add(champ, 6, 4);
+
 
 
 		primaryStage.setScene(scene);
