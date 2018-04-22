@@ -41,7 +41,7 @@ public class Main extends Application {
 		primaryStage.setTitle("GUI Sample");
 		BorderPane borderPane = new BorderPane();
 		GridPane gPane = new GridPane();
-		gPane.setGridLinesVisible(true);
+		gPane.setGridLinesVisible(false);
 		borderPane.setCenter(gPane);
 		Scene scene = new Scene(borderPane, 1600, 900, Color.DARKGRAY);
 
@@ -61,14 +61,22 @@ public class Main extends Application {
 		label4.setMinHeight(25);
 		label4.setText("Team4: ");
 
+		Label winner1 = new Label();
+		winner1.setMinHeight(25);
+		winner1.setText("Winner1: ");
+
+		Label winner2 = new Label();
+		winner2.setMinHeight(25);
+		winner2.setText("Winner2: ");
+
 		Label empty1 = new Label();
 		empty1.setMinHeight(200);
-		empty1.setMinWidth(100);
+		empty1.setMinWidth(50);
 		empty1.setText(" ");
 
 		Label empty2 = new Label();
 		empty2.setMinHeight(200);
-		empty2.setMinWidth(100);
+		empty2.setMinWidth(50);
 		empty2.setText(" ");
 
 		Button submit1 = new Button();
@@ -86,7 +94,7 @@ public class Main extends Application {
 
 		TextField input2 = new TextField();
 		input2.setMaxHeight(20); input2.setMaxWidth(200);
-		input2.setPromptText("Team 2");
+		input2.setPromptText("Score 2");
 		input2.setFocusTraversable(false);
 
 		TextField input3 = new TextField();
@@ -96,8 +104,18 @@ public class Main extends Application {
 
 		TextField input4 = new TextField();
 		input4.setMaxHeight(20); input4.setMaxWidth(200);
-		input4.setPromptText("Team 4");
+		input4.setPromptText("Score 4");
 		input4.setFocusTraversable(false);
+
+		TextField input5 = new TextField();
+		input5.setMaxHeight(20); input5.setMaxWidth(200);
+		input5.setPromptText("Score 5");
+		input5.setFocusTraversable(false);
+
+		TextField input6 = new TextField();
+		input6.setMaxHeight(20); input6.setMaxWidth(200);
+		input6.setPromptText("Score 2");
+		input6.setFocusTraversable(false);
 
 
 		gPane.add(label1, 0, 0);
@@ -116,6 +134,12 @@ public class Main extends Application {
 		gPane.add(input2, 1, 2);
 		gPane.add(input3, 1, 6);
 		gPane.add(input4, 1, 8);
+
+		gPane.add(winner1, 3, 1);
+		gPane.add(winner2, 3, 7);
+
+		gPane.add(input5, 4, 1);
+		gPane.add(input6, 4, 7);
 
 
 		primaryStage.setScene(scene);
