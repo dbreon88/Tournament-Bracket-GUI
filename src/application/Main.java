@@ -38,12 +38,19 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 
-		primaryStage.setTitle("GUI Sample");
+		primaryStage.setTitle("Bracket GUI Sample");
 		BorderPane borderPane = new BorderPane();
 		GridPane gPane = new GridPane();
 		gPane.setGridLinesVisible(false);
 		borderPane.setCenter(gPane);
 		Scene scene = new Scene(borderPane, 1600, 900, Color.DARKGRAY);
+		
+		 Label title = new Label();
+        title.setMinHeight(100);
+        title.setText("Tournament Bracket");
+        title.setFont(Font.font("Ariel", 50));
+        borderPane.setTop(title);
+        borderPane.setAlignment(title, Pos.CENTER);
 
 		Label label1 = new Label();
 		label1.setMinHeight(25);
