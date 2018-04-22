@@ -44,6 +44,7 @@ public class Main extends Application {
 		gPane.setGridLinesVisible(false);
 		borderPane.setCenter(gPane);
 		gPane.setAlignment(Pos.CENTER);
+		gPane.setStyle("-fx-border-color: black");
 		Scene scene = new Scene(borderPane, 1600, 900, Color.DARKGRAY);
 		
 		 Label title = new Label();
