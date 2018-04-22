@@ -1,3 +1,4 @@
+package application;
 
 import java.io.File;
 import java.util.Observable;
@@ -123,7 +124,7 @@ public class Main extends Application {
 
 	public static void main(String[] args) {
 
-		launch();
+		launch(args);
 //		String fileName = "file.txt";
 //		File inputFile = null;
 //		Scanner sc = null;
