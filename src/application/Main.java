@@ -30,7 +30,21 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
-
+/////////////////////////////////////////////////////////////////////////////
+//Semester:         CS400 Spring 2018
+//PROJECT:          Tournament Bracket GUI
+//
+//Authors:          Steven Wood, Jacob Latts, Ben Schulman, Dylan Breon
+//
+//Instructor:       Deb Deppeler (deppeler@cs.wisc.edu)
+//Bugs:             No known bugs
+//
+//2018 Apr 23, 2018 Main.java
+////////////////////////////////////////////////////////////////////////////
+/**
+ * This class generates and places all the components needed to display the tournament on the screen.
+ * JavaFX is used to generate the GUI.
+ */
 public class Main extends Application {
 
     static ObservableList<String> names = FXCollections.observableArrayList();
@@ -67,7 +81,8 @@ public class Main extends Application {
         info.setFont(Font.font("Ariel", 15));
         borderPane.setBottom(info);
         borderPane.setAlignment(info, Pos.CENTER);
-
+        
+        //Generate textboxes and labels to be added to screen
         Text round1 = new Text("Round 1");
         round1.setId("rounds");
         round1.minHeight(25);
@@ -142,8 +157,6 @@ public class Main extends Application {
         Button submit3 = new Button();
         submit3.setText("Submit Winner 1 vs Winner 2");
 
-        // Event Handle
-
         TextField input1 = new TextField();
         input1.setMaxHeight(20);
         input1.setMaxWidth(200);
@@ -180,7 +193,7 @@ public class Main extends Application {
         input6.setPromptText("Score 6");
         input6.setFocusTraversable(false);
 
-
+        //Add components to the pane
         gPane.add(round1, 0, 0);
         gPane.add(round2, 3, 0);
 
@@ -217,7 +230,7 @@ public class Main extends Application {
         gPane.add(third, 6, 13);
 
 
-
+        //Finally set the scene and show so it appears to the user.
         primaryStage.setScene(scene);
         primaryStage.show();
     }
