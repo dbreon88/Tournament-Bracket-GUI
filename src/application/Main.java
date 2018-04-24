@@ -73,8 +73,8 @@ public class Main extends Application {
         round1.minHeight(25);
 
         Text round2 = new Text("Round 2");
-        round1.setId("rounds");
-        round1.minHeight(25);
+        round2.setId("rounds");
+        round2.minHeight(25);
 
         Label label1 = new Label();
         label1.setMinHeight(25);
