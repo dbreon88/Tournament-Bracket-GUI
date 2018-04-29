@@ -243,24 +243,27 @@ public class Main extends Application {
 
     public static void main(String[] args) {
 
+        //launch(args);
+        String fileName = "file.txt";
+        File inputFile = null;
+        Scanner sc = null;
+
+        try {
+            inputFile = new File(fileName);
+            sc = new Scanner(inputFile);
+            while(sc.hasNextLine()) {
+                String name = sc.nextLine();
+                names.add(name);
+            }
+
+            sc.close();
+
+        } catch (Exception ex) {
+
+            ex.printStackTrace();
+            System.exit(-1);
+        }
+
         launch(args);
-        // String fileName = "file.txt";
-        // File inputFile = null;
-        // Scanner sc = null;
-
-        // try {
-        // inputFile = new File(fileName);
-        // sc = new Scanner(inputFile);
-        // while(sc.hasNextLine()) {
-        // String name = sc.nextLine();
-        // names.add(name);
-        // }
-        // sc.close();
-        // } catch (Exception ex) {
-        // ex.printStackTrace();
-        // System.exit(-1);
-        // }
-
-        // launch(args);
     }
 }
