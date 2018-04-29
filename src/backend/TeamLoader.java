@@ -13,7 +13,7 @@ public class TeamLoader {
 
 		BufferedReader br = new BufferedReader(new FileReader(new File(fileName)));
 		String st;
-		for(int i=1;(st = br.readLine()) != null;i++)
+		for (int i = 1; (st = br.readLine()) != null; i++)
 			teams.add(new Team(st, i));
 		return teams;
 
