@@ -1,3 +1,6 @@
+package backend;
+import java.util.ArrayList;
+
 ////////////////////////////////////////////////////////////////////////////
 //Semester:         CS400 Spring 2018
 //PROJECT:          Tournament Bracket GUI
@@ -7,24 +10,22 @@
 //Instructor:       Deb Deppeler (deppeler@cs.wisc.edu)
 //Bugs:             No known bugs
 //
-//2018 Apr 23, 2018 Team.java
+//2018 Apr 23, 2018 Bracket.java
 ////////////////////////////////////////////////////////////////////////////
 
 /**
- * This class represents a team that has a team name's and it's rank.
+ * This class represents a bracket with the teams in competition, and the top three placements.
  */
-public class Team {
-	private String teamName;
-	private Integer teamRank;
+public class Bracket {
+	private ArrayList<Team> competition;
+	private Team champion;
+	private Team runnerUp;
+	private Team third;
 	
 	/**
-	 * Constructor that creates a team with a given name and starting rank
-	 * 
-	 * @param teamName Team's name
-	 * @param teamRank Starting rank
+	 * Constructor for bracket that initializes the competition list.
 	 */
-	public Team(String teamName, Integer teamRank){
-		this.teamName = teamName;
-		this.teamRank = teamRank;
+	public Bracket(){
+		this.competition = new ArrayList<>();
 	}
 }
