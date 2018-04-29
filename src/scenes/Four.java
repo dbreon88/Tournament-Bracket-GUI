@@ -50,38 +50,49 @@ public class Four extends Scene {
 		borderPane.setAlignment(info, Pos.CENTER);
 
 		// Generate textboxes and labels to be added to screen
+		//Round 1 text
 		Text round1 = new Text("Round 1");
 		round1.setId("rounds");
 		round1.minHeight(25);
 
+		//Round 2 Text
 		Text round2 = new Text("Round 2");
 		round2.setId("rounds");
 		round2.minHeight(25);
 
+		//Team 1 Text
 		Label label1 = new Label();
 		label1.setMinHeight(25);
 		label1.setText(teams.get(0).getTeamName() + ": ");
 
+		//Team 2 text
 		Label label2 = new Label();
 		label2.setMinHeight(25);
 		label2.setText(teams.get(1).getTeamName() + ": ");
 
+		//Team 3 text
 		Label label3 = new Label();
 		label3.setMinHeight(25);
 		label3.setText(teams.get(2).getTeamName() + ": ");
 
+		//Team 4 text
 		Label label4 = new Label();
 		label4.setMinHeight(25);
 		label4.setText(teams.get(3).getTeamName() + ": ");
 
+		//Winer 1 Text
+		//TODO: change the name to the winner of the first two games
 		Label winner1 = new Label();
 		winner1.setMinHeight(25);
 		winner1.setText("Winner 1: ");
 
+		//Winner 2 Text
+		//TODO: change the name to the winner of the first two games
 		Label winner2 = new Label();
 		winner2.setMinHeight(25);
 		winner2.setText("Winner 2: ");
 
+		//Champion label
 		Label champ = new Label();
 		champ.setMinHeight(25);
 		champ.setText("Champion:");
@@ -89,10 +100,6 @@ public class Four extends Scene {
 		Label runnerUp = new Label();
 		runnerUp.setMinHeight(25);
 		runnerUp.setText("Runner Up:");
-
-		Label third = new Label();
-		third.setMinHeight(25);
-		third.setText("Third Place:");
 
 		Label empty1 = new Label();
 		empty1.setMinHeight(200);
@@ -200,7 +207,6 @@ public class Four extends Scene {
 
 		gPane.add(champ, 6, 6);
 		gPane.add(runnerUp, 6, 12);
-		gPane.add(third, 6, 13);
 	}
 
 }

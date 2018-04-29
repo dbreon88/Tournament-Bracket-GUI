@@ -101,7 +101,22 @@ public class Two extends Scene{
 		submit1.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				// Add funcitonality
+				try{
+					int team1score = Integer.parseInt(input1.getText().trim());
+					int team2score = Integer.parseInt(input2.getText().trim());
+
+					if(team1score > team2score){
+						champ.setText("Champion: " + teams.get(0).getTeamName());
+						runnerUp.setText("Runner Up: " + teams.get(1).getTeamName());
+					}else if(team1score < team2score){
+						champ.setText(("Champion: " + teams.get(1).getTeamName()));
+						runnerUp.setText("Runner Up: " + teams.get(0).getTeamName());
+					}else{
+						System.out.println("Teams may not have the same score");
+					}
+				} catch(NumberFormatException e){
+					System.out.println("Invalid Score");
+				}
 
 			}
 		});
@@ -119,6 +134,7 @@ public class Two extends Scene{
 		gPane.add(emptyCol, 2, 0, 1, 5);
 
 		gPane.add(champ, 3, 3);
+		gPane.add(runnerUp, 3, 6);
 
 
 
