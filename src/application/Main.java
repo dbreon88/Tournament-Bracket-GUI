@@ -55,7 +55,7 @@ public class Main extends Application {
         primaryStage.setTitle("Bracket GUI Sample");
         BorderPane borderPane = new BorderPane();
         GridPane gPane = new GridPane();
-        gPane.setGridLinesVisible(false);
+        gPane.setGridLinesVisible(true);
         borderPane.setCenter(gPane);
         gPane.setAlignment(Pos.CENTER);
         gPane.getStyleClass().add("pane");
@@ -83,6 +83,8 @@ public class Main extends Application {
         borderPane.setAlignment(info, Pos.CENTER);
         
         //Generate textboxes and labels to be added to screen
+
+        //Should loop to add these
         Text round1 = new Text("Round 1");
         round1.setId("rounds");
         round1.minHeight(25);
@@ -148,6 +150,7 @@ public class Main extends Application {
         empty4.setMaxHeight(300);
         empty4.setText(" ");
 
+        //We should have a for loop initializing each button for each matchup
         Button submit1 = new Button();
         submit1.setText("Submit Team 1 vs. Team 2");
 
@@ -156,7 +159,10 @@ public class Main extends Application {
 
         Button submit3 = new Button();
         submit3.setText("Submit Winner 1 vs Winner 2");
+        //Add event handlers for the buttons
 
+        //For loop to add each text field
+        //Make the max/min heights/widths to variables
         TextField input1 = new TextField();
         input1.setMaxHeight(20);
         input1.setMaxWidth(200);
