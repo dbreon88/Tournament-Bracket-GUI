@@ -1,5 +1,6 @@
 package scenes;
 
+import backend.Team;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -16,18 +17,19 @@ import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
+import java.util.ArrayList;
+
 public class Four extends Scene {
 
-	public Four(Parent root, double width, double height, Paint fill) {
+	public Four(Parent root, double width, double height, Paint fill, ArrayList<Team> teams) {
 		super(root, width, height, fill);
+
 		GridPane gPane = new GridPane();
 		gPane.setGridLinesVisible(true);
 		BorderPane borderPane = ((BorderPane) root);
 		borderPane.setCenter(gPane);
 		gPane.setAlignment(Pos.CENTER);
 		gPane.getStyleClass().add("pane");
-
-		int numTeams = 4; // teamArray.size();
 
 		DropShadow shad = new DropShadow();
 		shad.setOffsetY(3.0f);
@@ -61,19 +63,19 @@ public class Four extends Scene {
 
 			Label label1 = new Label();
 			label1.setMinHeight(25);
-			label1.setText("Team 1: ");
+			label1.setText(teams.get(0).getTeamName() + ": ");
 
 			Label label2 = new Label();
 			label2.setMinHeight(25);
-			label2.setText("Team 2: ");
+			label2.setText(teams.get(1).getTeamName() + ": ");
 
 			Label label3 = new Label();
 			label3.setMinHeight(25);
-			label3.setText("Team 3: ");
+			label3.setText(teams.get(2).getTeamName() + ": ");
 
 			Label label4 = new Label();
 			label4.setMinHeight(25);
-			label4.setText("Team 4: ");
+			label4.setText(teams.get(3).getTeamName() + ": ");
 
 			Label winner1 = new Label();
 			winner1.setMinHeight(25);
@@ -116,7 +118,7 @@ public class Four extends Scene {
 
 			// We should have a for loop initializing each button for each matchup
 			Button submit1 = new Button();
-			submit1.setText("Submit Team 1 vs. Team 2");
+			submit1.setText("Submit "+ teams.get(0).getTeamName()+ " vs. " + teams.get(1).getTeamName());
 			submit1.setOnAction(new EventHandler<ActionEvent>() {
 				@Override
 				public void handle(ActionEvent event) {
@@ -126,7 +128,7 @@ public class Four extends Scene {
 			});
 
 			Button submit2 = new Button();
-			submit2.setText("Submit Team 3 vs. Team 4");
+			submit2.setText("Submit " + teams.get(2).getTeamName() + " vs. " + teams.get(3).getTeamName());
 			// submit2.addEventHandler();
 
 			Button submit3 = new Button();

@@ -76,11 +76,21 @@ public class Main extends Application {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+
         Scene scene = null;
+        if(teams.size() == 0) {
+			scene = new Scene(borderPane, 1600, 900, Color.DARKGRAY);
+			GridPane gridPane = new GridPane();
+			gridPane.setAlignment(Pos.CENTER);
+			borderPane.setCenter(gridPane);
+			Text text = new Text("No Teams No winners!");
+			gridPane.add(text, 0, 0);
+		}
         if(teams.size() == 2)
         	scene = new Two(borderPane, 1600, 900, Color.DARKGRAY);
         if(teams.size()==4)
-        	scene = new Four(borderPane, 1600, 900, Color.DARKGRAY);
+        	scene = new Four(borderPane, 1600, 900, Color.DARKGRAY, teams);
         if(teams.size()==8)
         	scene = new Eight(borderPane, 1600, 900, Color.DARKGRAY);
         if(teams.size()==16)

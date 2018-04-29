@@ -28,4 +28,8 @@ public class Team {
 		this.teamName = teamName;
 		this.teamRank = teamRank;
 	}
+
+	public String getTeamName(){
+		return teamName;
+	}
 }
