@@ -88,13 +88,13 @@ public class Main extends Application {
 			gridPane.add(text, 0, 0);
 		}
         if(teams.size() == 2)
-        	scene = new Two(borderPane, 1600, 900, Color.DARKGRAY);
+        	scene = new Two(borderPane, 1600, 900, Color.DARKGRAY, teams);
         if(teams.size()==4)
         	scene = new Four(borderPane, 1600, 900, Color.DARKGRAY, teams);
         if(teams.size()==8)
-        	scene = new Eight(borderPane, 1600, 900, Color.DARKGRAY);
+        	scene = new Eight(borderPane, 1600, 900, Color.DARKGRAY, teams);
         if(teams.size()==16)
-        	scene = new Sixteen(borderPane, 1600, 900, Color.DARKGRAY);
+        	scene = new Sixteen(borderPane, 1600, 900, Color.DARKGRAY, teams);
         scene.getStylesheets().add("style.css");
 
 //		
