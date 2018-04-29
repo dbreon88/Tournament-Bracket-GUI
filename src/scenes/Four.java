@@ -25,7 +25,7 @@ public class Four extends Scene {
 		super(root, width, height, fill);
 
 		GridPane gPane = new GridPane();
-		gPane.setGridLinesVisible(false);
+		gPane.setGridLinesVisible(true);
 		BorderPane borderPane = ((BorderPane) root);
 		borderPane.setCenter(gPane);
 		gPane.setAlignment(Pos.CENTER);
@@ -81,13 +81,11 @@ public class Four extends Scene {
 		label4.setText(teams.get(3).getTeamName() + ": ");
 
 		//Winer 1 Text
-		//TODO: change the name to the winner of the first two games
 		Label winner1 = new Label();
 		winner1.setMinHeight(25);
 		winner1.setText("Winner 1: ");
 
 		//Winner 2 Text
-		//TODO: change the name to the winner of the first two games
 		Label winner2 = new Label();
 		winner2.setMinHeight(25);
 		winner2.setText("Winner 2: ");
