@@ -25,7 +25,7 @@ public class Four extends Scene {
 		super(root, width, height, fill);
 
 		GridPane gPane = new GridPane();
-		gPane.setGridLinesVisible(true);
+		gPane.setGridLinesVisible(false);
 		BorderPane borderPane = ((BorderPane) root);
 		borderPane.setCenter(gPane);
 		gPane.setAlignment(Pos.CENTER);
