@@ -215,15 +215,12 @@ public class Sixteen extends Scene {
 		Label runnerUp = new Label();
 		runnerUp.setPrefHeight(15);
 		runnerUp.setText("Runner Up:");
-
-		final int INPUT_FONT_SIZE = 3;
 		
 		TextField input1 = new TextField();
 		input1.setPrefHeight(15);
 		input1.setMaxWidth(200);
 		input1.setPromptText("Score 1");
 		input1.setFocusTraversable(false);
-		input1.setFont(new Font("Serif",INPUT_FONT_SIZE));
 
 
 		TextField input2 = new TextField();
@@ -231,7 +228,6 @@ public class Sixteen extends Scene {
 		input2.setMaxWidth(200);
 		input2.setPromptText("Score 2");
 		input2.setFocusTraversable(false);
-		input2.setFont(new Font("Serif",INPUT_FONT_SIZE));
 
 		TextField input3 = new TextField();
 		input3.setPrefHeight(15);
