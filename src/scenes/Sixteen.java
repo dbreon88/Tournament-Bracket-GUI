@@ -1,6 +1,8 @@
 package scenes;
 
 import backend.Team;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -395,12 +397,96 @@ public class Sixteen extends Scene {
 
 		Button submit1 = new Button();
 		submit1.setText("Submit " + teams.get(0).getTeamName() + " vs. " + teams.get(1).getTeamName());
+		submit1.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				try{
+					winner1.setText("Winner 1: ");
+
+					champ.setText("Champion: ");
+					runnerUp.setText("Runner Up: ");
+					winner9.setText("Winner 9: ");
+					winner13.setText("Winner 13: ");
+
+					int team1score = Integer.parseInt(input1.getText().trim());
+					int team2score = Integer.parseInt(input2.getText().trim());
+
+					if(team1score > team2score){
+						winner1.setText(teams.get(0).getTeamName());
+					} else if(team1score < team2score){
+						winner1.setText(teams.get(1).getTeamName());
+					} else{
+						System.out.println("Teams may not have the same score");
+					}
+
+				} catch(NumberFormatException e){
+					System.out.println("Invalid Score");
+				}
+
+			}
+		});
 
 		Button submit2 = new Button();
 		submit2.setText("Submit " + teams.get(2).getTeamName() + " vs. " + teams.get(3).getTeamName());
+		submit2.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				try{
+					winner2.setText("Winner 2: ");
+
+					champ.setText("Champion: ");
+					runnerUp.setText("Runner Up: ");
+					winner9.setText("Winner 9: ");
+					winner13.setText("Winner 13: ");
+
+					int team1score = Integer.parseInt(input3.getText().trim());
+					int team2score = Integer.parseInt(input4.getText().trim());
+
+					if(team1score > team2score){
+						winner2.setText(teams.get(2).getTeamName());
+					} else if(team1score < team2score){
+						winner2.setText(teams.get(3).getTeamName());
+					} else{
+						System.out.println("Teams may not have the same score");
+					}
+
+				} catch(NumberFormatException e){
+					System.out.println("Invalid Score");
+				}
+
+			}
+		});
 
 		Button submit3 = new Button();
 		submit3.setText("Submit " + teams.get(4).getTeamName() + " vs. " + teams.get(5).getTeamName());
+		submit3.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				try{
+					winner3.setText("Winner 3: ");
+
+					champ.setText("Champion: ");
+					runnerUp.setText("Runner Up: ");
+					winner10.setText("Winner 10: ");
+					winner13.setText("Winner 13: ");
+
+					int team1score = Integer.parseInt(input5.getText().trim());
+					int team2score = Integer.parseInt(input6.getText().trim());
+
+					if(team1score > team2score){
+						winner3.setText(teams.get(4).getTeamName());
+					} else if(team1score < team2score){
+						winner3.setText(teams.get(5).getTeamName());
+					} else{
+						System.out.println("Teams may not have the same score");
+					}
+
+				} catch(NumberFormatException e){
+					System.out.println("Invalid Score");
+				}
+
+			}
+		});
 
 		Button submit4 = new Button();
 		submit4.setText("Submit " + teams.get(6).getTeamName() + " vs. " + teams.get(7).getTeamName());
@@ -528,6 +614,23 @@ public class Sixteen extends Scene {
 		gPane.add(inputW14, 10, 25);
 
 		gPane.add(champ, 12, 17);
+
+		gPane.add(submit1, 0, 3, 2,1);
+		gPane.add(submit2, 0, 7, 2,1);
+		gPane.add(submit3, 0, 11, 2,1);
+		gPane.add(submit4, 0, 15, 2,1);
+		gPane.add(submit5, 0, 19, 2,1);
+		gPane.add(submit6, 0, 23, 2,1);
+		gPane.add(submit7, 0, 27, 2,1);
+		gPane.add(submit8, 0, 31, 2,1);
+		gPane.add(submit9, 3, 5, 2,1);
+		gPane.add(submit10, 3, 13, 2,1);
+		gPane.add(submit11, 3, 21, 2,1);
+		gPane.add(submit12, 3, 29, 2,1);
+		gPane.add(submit13, 6, 9, 2,1);
+		gPane.add(submit14, 6, 25, 2,1);
+		gPane.add(submit15, 9, 17, 2,1);
+
 
 	}
 }
