@@ -6,3 +6,11 @@ five
 siix
 t7
 eighth team
+nine
+ten
+eleven
+12
+thirteen
+fourteen
+15
+16
