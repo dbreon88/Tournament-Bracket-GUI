@@ -1,6 +1,8 @@
 package scenes;
 
 import backend.Team;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -23,7 +25,7 @@ public class Eight extends Scene {
 		super(root, width, height, fill);
 
 		GridPane gPane = new GridPane();
-		gPane.setGridLinesVisible(true);
+		gPane.setGridLinesVisible(false);
 		BorderPane borderPane = ((BorderPane) root);
 		borderPane.setCenter(gPane);
 		gPane.setAlignment(Pos.CENTER);
@@ -228,33 +230,221 @@ public class Eight extends Scene {
 		Label emptyCol1 = new Label(" ");
 		Label emptyCol2 = new Label(" ");
 		Label emptyCol3 = new Label(" ");
-		emptyCol1.setMinWidth(200);
-		emptyCol2.setMinWidth(200);
-		emptyCol3.setMinWidth(200);
+		emptyCol1.setMinWidth(100);
+		emptyCol2.setMinWidth(100);
+		emptyCol3.setMinWidth(100);
 
 		Button submit1 = new Button();
 		submit1.setText("Submit " + teams.get(0).getTeamName() + " vs. " + teams.get(1).getTeamName());
+		submit1.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				try{
+					winner1.setText("Winner 1: ");
+
+					champ.setText("Champion: ");
+					runnerUp.setText("Runner Up: ");
+					winner5.setText("Winner 5: ");
+
+					int team1score = Integer.parseInt(input1.getText().trim());
+					int team2score = Integer.parseInt(input2.getText().trim());
+
+					if(team1score > team2score){
+						winner1.setText(teams.get(0).getTeamName());
+					} else if(team1score < team2score){
+						winner1.setText(teams.get(1).getTeamName());
+					} else{
+						System.out.println("Teams may not have the same score");
+					}
+
+				} catch(NumberFormatException e){
+					System.out.println("Invalid Score");
+				}
+
+			}
+		});
 
 		Button submit2 = new Button();
 		submit2.setText("Submit " + teams.get(2).getTeamName() + " vs. " + teams.get(3).getTeamName());
+		submit2.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				try{
+					winner2.setText("Winner 2: ");
+
+					champ.setText("Champion: ");
+					runnerUp.setText("Runner Up: ");
+					winner5.setText("Winner 5: ");
+
+					int team1score = Integer.parseInt(input3.getText().trim());
+					int team2score = Integer.parseInt(input4.getText().trim());
+
+					if(team1score > team2score){
+						winner2.setText(teams.get(2).getTeamName());
+					} else if(team1score < team2score){
+						winner2.setText(teams.get(3).getTeamName());
+					} else{
+						System.out.println("Teams may not have the same score");
+					}
+
+				} catch(NumberFormatException e){
+					System.out.println("Invalid Score");
+				}
+
+			}
+		});
 
 		Button submit3 = new Button();
 		submit3.setText("Submit " + teams.get(4).getTeamName() + " vs. " + teams.get(5).getTeamName());
+		submit3.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				try{
+					winner3.setText("Winner 3: ");
+
+					champ.setText("Champion: ");
+					runnerUp.setText("Runner Up: ");
+					winner6.setText("Winner 6: ");
+
+					int team1score = Integer.parseInt(input5.getText().trim());
+					int team2score = Integer.parseInt(input6.getText().trim());
+
+					if(team1score > team2score){
+						winner3.setText(teams.get(4).getTeamName());
+					} else if(team1score < team2score){
+						winner3.setText(teams.get(5).getTeamName());
+					} else{
+						System.out.println("Teams may not have the same score");
+					}
+
+				} catch(NumberFormatException e){
+					System.out.println("Invalid Score");
+				}
+
+			}
+		});
 
 		Button submit4 = new Button();
 		submit4.setText("Submit " + teams.get(6).getTeamName() + " vs. " + teams.get(7).getTeamName());
+		submit4.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				try{
+					winner4.setText("Winner 4: ");
+
+					champ.setText("Champion: ");
+					runnerUp.setText("Runner Up: ");
+					winner6.setText("Winner 6: ");
+
+					int team1score = Integer.parseInt(input7.getText().trim());
+					int team2score = Integer.parseInt(input8.getText().trim());
+
+					if(team1score > team2score){
+						winner4.setText(teams.get(6).getTeamName());
+					} else if(team1score < team2score){
+						winner4.setText(teams.get(7).getTeamName());
+					} else{
+						System.out.println("Teams may not have the same score");
+					}
+
+				} catch(NumberFormatException e){
+					System.out.println("Invalid Score");
+				}
+
+			}
+		});
 
 		Button submit5 = new Button();
 		submit5.setText("Submit Winner 1 vs. Winner 2");
+		submit5.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				try{
+					champ.setText("Champion: ");
+					runnerUp.setText("Runner Up: ");
+
+					winner5.setText("Winner 5: ");
+
+					int team1score = Integer.parseInt(input9.getText().trim());
+					int team2score = Integer.parseInt(input10.getText().trim());
+
+					if(team1score > team2score){
+						winner5.setText(winner1.getText());
+					} else if(team1score < team2score){
+						winner5.setText(winner2.getText());
+					} else{
+						System.out.println("Teams may not have the same score");
+					}
+
+				} catch(NumberFormatException e){
+					System.out.println("Invalid Score");
+				}
+
+			}
+		});
 
 		Button submit6 = new Button();
 		submit6.setText("Submit Winner 3 vs. Winner 4");
+		submit6.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				try{
+					champ.setText("Champion: ");
+					runnerUp.setText("Runner Up: ");
+
+					winner6.setText("Winner 6: ");
+
+					int team1score = Integer.parseInt(input11.getText().trim());
+					int team2score = Integer.parseInt(input12.getText().trim());
+
+					if(team1score > team2score){
+						winner6.setText(winner3.getText());
+					} else if(team1score < team2score){
+						winner6.setText(winner4.getText());
+					} else{
+						System.out.println("Teams may not have the same score");
+					}
+
+				} catch(NumberFormatException e){
+					System.out.println("Invalid Score");
+				}
+
+			}
+		});
 
 		Button submit7 = new Button();
 		submit7.setText("Submit Winner 5 vs. Winner 6");
+		submit7.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				try{
+					champ.setText("Champion: ");
+					runnerUp.setText("Runner Up: ");
+
+					int team1score = Integer.parseInt(input13.getText().trim());
+					int team2score = Integer.parseInt(input14.getText().trim());
+
+					if(team1score > team2score){
+						champ.setText("Champion: "+winner5.getText());
+						runnerUp.setText("Runner Up: "+winner6.getText());
+					} else if(team1score < team2score){
+						champ.setText("Champion: "+winner6.getText());
+						runnerUp.setText("Runner Up: "+winner5.getText());
+					} else{
+						System.out.println("Teams may not have the same score");
+					}
+
+				} catch(NumberFormatException e){
+					System.out.println("Invalid Score");
+				}
+
+			}
+		});
 
 		gPane.add(round1, 0, 0);
 		gPane.add(round2, 3, 0);
+		gPane.add(round3, 6, 0);
 
 		gPane.add(emptyRow1, 0, 1, 9, 1);
 
@@ -310,8 +500,7 @@ public class Eight extends Scene {
 		gPane.add(emptyCol3, 8, 0, 1, 16);
 
 		gPane.add(champ, 9, 9);
-
-
+		gPane.add(runnerUp, 9, 16);
 
 
 

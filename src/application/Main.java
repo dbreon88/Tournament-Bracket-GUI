@@ -88,6 +88,14 @@ public class Main extends Application {
 			Text text = new Text("No Teams No winners!");
 			gridPane.add(text, 0, 0);
 		}
+		if(teams.size() == 1){
+			scene = new Scene(borderPane, 1600, 900, Color.DARKGRAY);
+			GridPane gridPane = new GridPane();
+			gridPane.setAlignment(Pos.CENTER);
+			borderPane.setCenter(gridPane);
+			Text text = new Text("Champion: " + teams.get(0).getTeamName());
+			gridPane.add(text, 0, 0);
+		}
 		if (teams.size() == 2)
 			scene = new Two(borderPane, 1600, 900, Color.DARKGRAY, teams);
 		if (teams.size() == 4)
