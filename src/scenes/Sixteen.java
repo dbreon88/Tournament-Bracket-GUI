@@ -46,9 +46,9 @@ public class Sixteen extends Scene {
 		Label info = new Label();
 		info.setPrefHeight(100);
 		info.setText(
-				"INSTRUCTIONS:\n-For each game: Enter each team's score then click submit button between the two teams.\n-After completing all games for a round, move on to next round and repeat process to enter teams' scores.\n After submitting the scores for the championship game the top three contenders will be displayed!");
+				"INSTRUCTIONS:\n-For each game: Enter each team's score then \n   click submit button between the two teams.\n-After completing all games for a round, move\n    on to next round and repeat process to enter teams' scores.\n After submitting the scores for the championship game the top three contenders will be displayed!");
 		info.setFont(Font.font("Ariel", 15));
-		borderPane.setBottom(info);
+		borderPane.setLeft((info));
 		borderPane.setAlignment(info, Pos.CENTER);
 
 
@@ -147,6 +147,7 @@ public class Sixteen extends Scene {
 		Label winner1 = new Label();
 		winner1.setPrefHeight(15);
 		winner1.setText("Winner 1: ");
+		
 
 		//Winner 2 Text
 		Label winner2 = new Label();
@@ -215,17 +216,22 @@ public class Sixteen extends Scene {
 		runnerUp.setPrefHeight(15);
 		runnerUp.setText("Runner Up:");
 
+		final int INPUT_FONT_SIZE = 3;
+		
 		TextField input1 = new TextField();
 		input1.setPrefHeight(15);
 		input1.setMaxWidth(200);
 		input1.setPromptText("Score 1");
 		input1.setFocusTraversable(false);
+		input1.setFont(new Font("Serif",INPUT_FONT_SIZE));
+
 
 		TextField input2 = new TextField();
 		input2.setPrefHeight(15);
 		input2.setMaxWidth(200);
 		input2.setPromptText("Score 2");
 		input2.setFocusTraversable(false);
+		input2.setFont(new Font("Serif",INPUT_FONT_SIZE));
 
 		TextField input3 = new TextField();
 		input3.setPrefHeight(15);
