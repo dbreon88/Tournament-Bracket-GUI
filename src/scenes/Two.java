@@ -42,9 +42,8 @@ public class Two extends Scene{
 		borderPane.setAlignment(title, Pos.CENTER);
 
 		Label info = new Label();
-		info.setMinHeight(100);
 		info.setText(
-				"INSTRUCTIONS:\n-For each game: Enter each team's score then \n   click submit button between the two teams.\n-After completing all games for a round, move\n    on to next round and repeat process to enter teams' scores.\n After submitting the scores for the championship game the top three contenders will be displayed!");
+				"INSTRUCTIONS:\n-For each game: Enter each team's score then \n   click submit button between the two teams.\n-After completing all games for a round, move\n    on to next round and repeat process to enter teams' scores.\n After submitting the scores for the championship game the \n   top three contenders will be displayed!");
 		info.setFont(Font.font("Ariel", 15));
 		borderPane.setLeft((info));
 		borderPane.setAlignment(info, Pos.CENTER);
