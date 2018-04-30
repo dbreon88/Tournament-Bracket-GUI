@@ -4,6 +4,7 @@ import backend.Team;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.DropShadow;
@@ -114,22 +115,22 @@ public class Eight extends Scene {
 
 		//Winner 3 text
 		Label winner3 = new Label();
-		winner1.setMinHeight(25);
-		winner1.setText("Winner 3: ");
+		winner3.setMinHeight(25);
+		winner3.setText("Winner 3: ");
 
 		//Winner 4 Text
 		Label winner4 = new Label();
-		winner2.setMinHeight(25);
-		winner2.setText("Winner 4: ");
+		winner4.setMinHeight(25);
+		winner4.setText("Winner 4: ");
 
 		Label winner5 = new Label();
-		winner1.setMinHeight(25);
-		winner1.setText("Winner 5: ");
+		winner5.setMinHeight(25);
+		winner5.setText("Winner 5: ");
 
 		//Winner 6 Text
 		Label winner6 = new Label();
-		winner2.setMinHeight(25);
-		winner2.setText("Winner 6: ");
+		winner6.setMinHeight(25);
+		winner6.setText("Winner 6: ");
 
 		Label champ = new Label();
 		champ.setMinHeight(25);
@@ -224,6 +225,31 @@ public class Eight extends Scene {
 		input14.setFocusTraversable(false);
 
 		Label emptyRow1 = new Label(" ");
+		Label emptyCol1 = new Label(" ");
+		Label emptyCol2 = new Label(" ");
+		emptyCol1.setMinWidth(200);
+		emptyCol2.setMinWidth(200);
+
+		Button submit1 = new Button();
+		submit1.setText("Submit " + teams.get(0).getTeamName() + " vs. " + teams.get(1).getTeamName());
+
+		Button submit2 = new Button();
+		submit2.setText("Submit " + teams.get(2).getTeamName() + " vs. " + teams.get(3).getTeamName());
+
+		Button submit3 = new Button();
+		submit3.setText("Submit " + teams.get(4).getTeamName() + " vs. " + teams.get(5).getTeamName());
+
+		Button submit4 = new Button();
+		submit4.setText("Submit " + teams.get(6).getTeamName() + " vs. " + teams.get(7).getTeamName());
+
+		Button submit5 = new Button();
+		submit5.setText("Submit Winner 1 vs. Winner 2");
+
+		Button submit6 = new Button();
+		submit6.setText("Submit Winner 3 vs. Winner 4");
+
+		Button submit7 = new Button();
+		submit7.setText("Submit Winner 5 vs. Winner 6");
 
 		gPane.add(round1, 0, 0);
 		gPane.add(round2, 3, 0);
@@ -249,23 +275,38 @@ public class Eight extends Scene {
 		gPane.add(input8, 1, 16);
 
 
-		//gPane.add(submit1, 0, 3, 2, 1);
-		//gPane.add(submit2, 0, 9, 2, 1);
-		//gPane.add(submit3, 3, 6, 2, 1);
+		gPane.add(submit1, 0, 3, 2, 1);
+		gPane.add(submit2, 0, 7, 2, 1);
+		gPane.add(submit3, 0, 11, 2, 1);
+		gPane.add(submit4, 0, 15, 2, 1);
 
-		//gPane.add(input1, 1, 2);
-		//gPane.add(input2, 1, 4);
-		//gPane.add(input3, 1, 8);
-		//gPane.add(input4, 1, 10);
+		gPane.add(emptyCol1, 2, 0, 1, 16);
 
-		//gPane.add(winner1, 3, 3);
-		//gPane.add(winner2, 3, 9);
+		gPane.add(winner1, 3, 3);
+		gPane.add(winner2, 3, 7);
+		gPane.add(winner3, 3, 11);
+		gPane.add(winner4, 3, 15);
 
-		//gPane.add(input5, 4, 3);
-		//gPane.add(input6, 4, 9);
+		gPane.add(input9, 4,3);
+		gPane.add(input10, 4, 7);
+		gPane.add(input11, 4, 11);
+		gPane.add(input12, 4, 15);
 
-		//gPane.add(champ, 6, 6);
-		//gPane.add(runnerUp, 6, 12);
+		gPane.add(submit5, 3, 5, 2, 1);
+		gPane.add(submit6, 3, 13, 2, 1);
+
+		gPane.add(emptyCol2, 5, 0, 1, 16);
+
+		gPane.add(winner5, 6, 5);
+		gPane.add(winner6, 6, 13);
+
+		gPane.add(input13, 7, 5);
+		gPane.add(input14, 7, 13);
+
+		gPane.add(submit7, 6,9,2,1);
+
+
+
 
 
 	}
