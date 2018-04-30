@@ -234,7 +234,7 @@ public class Eight extends Scene {
 		emptyCol3.setMinWidth(100);
 
 		Button submit1 = new Button();
-		submit1.setText("Submit " + teams.get(0).getTeamName() + " vs. " + teams.get(1).getTeamName());
+		submit1.setText("Submit Score");
 		submit1.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
@@ -265,7 +265,7 @@ public class Eight extends Scene {
 		});
 
 		Button submit2 = new Button();
-		submit2.setText("Submit " + teams.get(2).getTeamName() + " vs. " + teams.get(3).getTeamName());
+		submit2.setText("Submit Score");
 		submit2.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -295,7 +295,7 @@ public class Eight extends Scene {
 		});
 
 		Button submit3 = new Button();
-		submit3.setText("Submit " + teams.get(4).getTeamName() + " vs. " + teams.get(5).getTeamName());
+		submit3.setText("Submit Score");
 		submit3.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -325,7 +325,7 @@ public class Eight extends Scene {
 		});
 
 		Button submit4 = new Button();
-		submit4.setText("Submit " + teams.get(6).getTeamName() + " vs. " + teams.get(7).getTeamName());
+		submit4.setText("Submit Score");
 		submit4.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -355,7 +355,7 @@ public class Eight extends Scene {
 		});
 
 		Button submit5 = new Button();
-		submit5.setText("Submit Winner 1 vs. Winner 2");
+		submit5.setText("Submit Score");
 		submit5.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -384,7 +384,7 @@ public class Eight extends Scene {
 		});
 
 		Button submit6 = new Button();
-		submit6.setText("Submit Winner 3 vs. Winner 4");
+		submit6.setText("Submit Score");
 		submit6.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -413,7 +413,7 @@ public class Eight extends Scene {
 		});
 
 		Button submit7 = new Button();
-		submit7.setText("Submit Winner 5 vs. Winner 6");
+		submit7.setText("Submit Score");
 		submit7.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {

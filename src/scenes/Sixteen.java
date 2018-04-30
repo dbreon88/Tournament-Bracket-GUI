@@ -397,7 +397,7 @@ public class Sixteen extends Scene {
 		inputW14.setFocusTraversable(false);
 
 		Button submit1 = new Button();
-		submit1.setText("Submit " + teams.get(0).getTeamName() + " vs. " + teams.get(1).getTeamName());
+		submit1.setText("Submit Score");
 		submit1.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -428,7 +428,7 @@ public class Sixteen extends Scene {
 		});
 
 		Button submit2 = new Button();
-		submit2.setText("Submit " + teams.get(2).getTeamName() + " vs. " + teams.get(3).getTeamName());
+		submit2.setText("Submit Score");
 		submit2.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -459,7 +459,7 @@ public class Sixteen extends Scene {
 		});
 
 		Button submit3 = new Button();
-		submit3.setText("Submit " + teams.get(4).getTeamName() + " vs. " + teams.get(5).getTeamName());
+		submit3.setText("Submit Score");
 		submit3.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -490,7 +490,7 @@ public class Sixteen extends Scene {
 		});
 
 		Button submit4 = new Button();
-		submit4.setText("Submit " + teams.get(6).getTeamName() + " vs. " + teams.get(7).getTeamName());
+		submit4.setText("Submit Score");
 		submit4.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -521,7 +521,7 @@ public class Sixteen extends Scene {
 		});
 
 		Button submit5 = new Button();
-		submit5.setText("Submit " + teams.get(8).getTeamName() + " vs. " + teams.get(9).getTeamName());
+		submit5.setText("Submit Score");
 		submit5.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -552,7 +552,7 @@ public class Sixteen extends Scene {
 		});
 
 		Button submit6 = new Button();
-		submit6.setText("Submit " + teams.get(10).getTeamName() + " vs. " + teams.get(11).getTeamName());
+		submit6.setText("Submit Score");
 		submit6.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -583,7 +583,7 @@ public class Sixteen extends Scene {
 		});
 
 		Button submit7 = new Button();
-		submit7.setText("Submit " + teams.get(12).getTeamName() + " vs. " + teams.get(13).getTeamName());
+		submit7.setText("Submit Score");
 		submit7.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -614,7 +614,7 @@ public class Sixteen extends Scene {
 		});
 
 		Button submit8 = new Button();
-		submit8.setText("Submit " + teams.get(14).getTeamName() + " vs. " + teams.get(15).getTeamName());
+		submit8.setText("Submit Score");
 		submit8.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -645,7 +645,7 @@ public class Sixteen extends Scene {
 		});
 
 		Button submit9 = new Button();
-		submit9.setText("Submit Winner 1 vs. Winner 2");
+		submit9.setText("Submit Score");
 		submit9.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -675,7 +675,7 @@ public class Sixteen extends Scene {
 		});
 
 		Button submit10 = new Button();
-		submit10.setText("Submit Winner 3 vs. Winner 4");
+		submit10.setText("Submit Score");
 		submit10.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -705,7 +705,7 @@ public class Sixteen extends Scene {
 		});
 
 		Button submit11 = new Button();
-		submit11.setText("Submit Winner 5 vs. Winner 6");
+		submit11.setText("Submit Score");
 		submit11.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -735,7 +735,7 @@ public class Sixteen extends Scene {
 		});
 
 		Button submit12 = new Button();
-		submit12.setText("Submit Winner 7 vs. Winner 8");
+		submit12.setText("Submit Score");
 		submit12.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -765,7 +765,7 @@ public class Sixteen extends Scene {
 		});
 
 		Button submit13 = new Button();
-		submit13.setText("Submit Winner 9 vs. Winner 10");
+		submit13.setText("Submit Score");
 		submit13.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -794,7 +794,7 @@ public class Sixteen extends Scene {
 		});
 
 		Button submit14 = new Button();
-		submit14.setText("Submit Winner 11 vs. Winner 12");
+		submit14.setText("Submit Score");
 		submit14.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -823,7 +823,7 @@ public class Sixteen extends Scene {
 		});
 
 		Button submit15 = new Button();
-		submit15.setText("Submit Winner 13 vs. Winner 14");
+		submit15.setText("Submit Score");
 		submit15.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {

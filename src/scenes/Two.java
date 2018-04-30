@@ -96,7 +96,7 @@ public class Two extends Scene{
 
 		//Submit scores button
 		Button submit1 = new Button();
-		submit1.setText("Submit "+ teams.get(0).getTeamName()+ " vs. " + teams.get(1).getTeamName());
+		submit1.setText("Submit Score");
 		submit1.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {

@@ -154,7 +154,7 @@ public class Four extends Scene {
 		input6.setFocusTraversable(false);
 
 		Button submit1 = new Button();
-		submit1.setText("Submit " + teams.get(0).getTeamName() + " vs. " + teams.get(1).getTeamName());
+		submit1.setText("Submit Score");
 		submit1.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -183,7 +183,7 @@ public class Four extends Scene {
 		});
 
 		Button submit2 = new Button();
-		submit2.setText("Submit " + teams.get(2).getTeamName() + " vs. " + teams.get(3).getTeamName());
+		submit2.setText("Submit Score");
 		submit2.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -212,7 +212,7 @@ public class Four extends Scene {
 		});
 
 		Button submit3 = new Button();
-		submit3.setText("Submit Winner 1 vs Winner 2");
+		submit3.setText("Submit Score");
 		submit3.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
