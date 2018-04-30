@@ -227,8 +227,10 @@ public class Eight extends Scene {
 		Label emptyRow1 = new Label(" ");
 		Label emptyCol1 = new Label(" ");
 		Label emptyCol2 = new Label(" ");
+		Label emptyCol3 = new Label(" ");
 		emptyCol1.setMinWidth(200);
 		emptyCol2.setMinWidth(200);
+		emptyCol3.setMinWidth(200);
 
 		Button submit1 = new Button();
 		submit1.setText("Submit " + teams.get(0).getTeamName() + " vs. " + teams.get(1).getTeamName());
@@ -304,6 +306,10 @@ public class Eight extends Scene {
 		gPane.add(input14, 7, 13);
 
 		gPane.add(submit7, 6,9,2,1);
+
+		gPane.add(emptyCol3, 8, 0, 1, 16);
+
+		gPane.add(champ, 9, 9);
 
 
 
