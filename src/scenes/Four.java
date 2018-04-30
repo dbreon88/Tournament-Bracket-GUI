@@ -18,9 +18,31 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 import java.util.ArrayList;
-
+////////////////////////////////////////////////////////////////////////////
+//Semester:         CS400 Spring 2018
+//PROJECT:          Tournament Bracket GUI
+//
+//Authors:          Steven Wood, Jacob Latts, Ben Schulman, Dylan Breon
+//
+//Instructor:       Deb Deppeler (deppeler@cs.wisc.edu)
+//Bugs:             No known bugs
+//
+//2018 Apr 23, 2018 Four.java
+////////////////////////////////////////////////////////////////////////////
+/**
+ * Generates a scene that represents a tournament bracket of four competing teams.
+ */
 public class Four extends Scene {
 
+	/**
+	 * Constructor that generates a GUI for the four teams in the given teams ArrayList.
+	 * 
+	 * @param root - BorderPane that is the root of the GUI
+	 * @param width - width of GUI
+	 * @param height - height of GUI
+	 * @param fill - Color to fill as background
+	 * @param teams - List of all teams participating in tournament. Length should be four.
+	 */
 	public Four(Parent root, double width, double height, Paint fill, ArrayList<Team> teams) {
 		super(root, width, height, fill);
 
