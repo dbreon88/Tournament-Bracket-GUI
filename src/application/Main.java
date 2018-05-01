@@ -78,7 +78,7 @@ public class Main extends Application {
 			scene = new EightTeams(borderPane, 1600, 900, Color.DARKGRAY, teams);
 		if (teams.size() == 16)
 			scene = new SixteenTeams(borderPane, 1600, 900, Color.DARKGRAY, teams);
-		scene.getStylesheets().add("style.css");
+		scene.getStylesheets().add("application/style.css");
 
 		//Finally set the scene and show so it appears to the user.
 		primaryStage.setScene(scene);
