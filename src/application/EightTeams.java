@@ -1,6 +1,5 @@
-package scenes;
+package application;
 
-import backend.Team;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -32,7 +31,7 @@ import java.util.ArrayList;
 /**
  * Generates a scene that represents a tournament bracket of two competing teams.
  */
-public class Eight extends Scene {
+public class EightTeams extends Scene {
 
 	/**
 	 * Constructor that generates a GUI for the eight teams in the given teams ArrayList.
@@ -43,7 +42,7 @@ public class Eight extends Scene {
 	 * @param fill - Color to fill as background
 	 * @param teams - List of all teams participating in tournament. Length should be eight.
 	 */
-	public Eight(Parent root, double width, double height, Paint fill, ArrayList<Team> teams) {
+	public EightTeams(Parent root, double width, double height, Paint fill, ArrayList<Team> teams) {
 		super(root, width, height, fill);
 
 		GridPane gPane = new GridPane();
