@@ -49,11 +49,13 @@ public class SixteenTeams extends Scene {
 
 		Team gameOneLoser = new Team();
 		Team gameTwoLoser = new Team();
-
+		
 		GridPane gPane = new GridPane();
 		gPane.getRowConstraints().add(new RowConstraints(15));
 		gPane.setGridLinesVisible(false);
-		BorderPane borderPane = ((BorderPane) root);
+		ScrollPane scrollPane = ((ScrollPane) root);
+		BorderPane borderPane = new BorderPane();
+		scrollPane.setContent(borderPane);
 		borderPane.setCenter(gPane);
 		gPane.setAlignment(Pos.CENTER);
 		gPane.getStyleClass().add("pane");
