@@ -58,29 +58,29 @@ public class Main extends Application {
 
 		Scene scene = null;
 		if (teams.size() == 0) {
-			scene = new Scene(borderPane, 1600, 900, Color.DARKGRAY);
+			scene = new Scene(scrollPane, 1600, 900, Color.DARKGRAY);
 			GridPane gridPane = new GridPane();
 			gridPane.setAlignment(Pos.CENTER);
-			borderPane.setCenter(gridPane);
+			scrollPane.setContent(gridPane);
 			Text text = new Text("No Teams No winners!");
 			gridPane.add(text, 0, 0);
 		}
 		if(teams.size() == 1){
-			scene = new Scene(borderPane, 1600, 900, Color.DARKGRAY);
+			scene = new Scene(scrollPane, 1600, 900, Color.DARKGRAY);
 			GridPane gridPane = new GridPane();
 			gridPane.setAlignment(Pos.CENTER);
-			borderPane.setCenter(gridPane);
+			scrollPane.setContent(gridPane);
 			Text text = new Text("Champion: " + teams.get(0).getTeamName());
 			gridPane.add(text, 0, 0);
 		}
 		if (teams.size() == 2)
-			scene = new TwoTeams(borderPane, 1600, 900, Color.DARKGRAY, teams);
+			scene = new TwoTeams(scrollPane, 1600, 900, Color.DARKGRAY, teams);
 		if (teams.size() == 4)
-			scene = new FourTeams(borderPane, 1600, 900, Color.DARKGRAY, teams);
+			scene = new FourTeams(scrollPane, 1600, 900, Color.DARKGRAY, teams);
 		if (teams.size() == 8)
-			scene = new EightTeams(borderPane, 1600, 900, Color.DARKGRAY, teams);
+			scene = new EightTeams(scrollPane, 1600, 900, Color.DARKGRAY, teams);
 		if (teams.size() == 16)
-			scene = new SixteenTeams(borderPane, 1600, 900, Color.DARKGRAY, teams);
+			scene = new SixteenTeams(scrollPane, 1600, 900, Color.DARKGRAY, teams);
 		scene.getStylesheets().add("application/style.css");
 
 		//Finally set the scene and show so it appears to the user.
