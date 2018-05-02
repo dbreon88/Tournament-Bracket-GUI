@@ -50,7 +50,9 @@ public class FourTeams extends Scene {
 
 		GridPane gPane = new GridPane();
 		gPane.setGridLinesVisible(false);
-		BorderPane borderPane = ((BorderPane) root);
+		ScrollPane scrollPane = ((ScrollPane) root);
+		BorderPane borderPane = new BorderPane();
+		scrollPane.setContent(borderPane);
 		borderPane.setCenter(gPane);
 		gPane.setAlignment(Pos.CENTER);
 		gPane.getStyleClass().add("pane");
