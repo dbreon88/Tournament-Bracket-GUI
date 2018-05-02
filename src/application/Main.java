@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -38,6 +39,8 @@ public class Main extends Application {
 
 		primaryStage.setTitle("Bracket GUI Sample");
 		BorderPane borderPane = new BorderPane();
+		final Parameters params = getParameters();
+		final List<String> parameters = params.getRaw();
 //        GridPane gPane = new GridPane();
 //        gPane.setGridLinesVisible(true);
 //        borderPane.setCenter(gPane);
@@ -46,7 +49,7 @@ public class Main extends Application {
 		//Scene scene = new Four(borderPane, 1600, 900, Color.DARKGRAY);
 		ArrayList<Team> teams = null;
 		try {
-			teams = TeamLoader.teamLoader("test.txt");
+			teams = TeamLoader.teamLoader(parameters.get(0));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
