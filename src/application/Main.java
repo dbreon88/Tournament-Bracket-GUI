@@ -35,30 +35,37 @@ public class Main extends Application {
 
 	static ObservableList<String> names = FXCollections.observableArrayList();
 
+
+	/**
+	 * The method that runs on the start of the application
+	 *
+	 * @param primaryStage
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 
-		primaryStage.setTitle("Bracket GUI Sample");
+		//Create the new stage
+		primaryStage.setTitle("Tournament Bracket");
+		//Gives the ability to scroll
 		ScrollPane scrollPane = new ScrollPane();
+		//Allows us to retrieve the command line arguments
 		final Parameters params = getParameters();
 		final List<String> parameters = params.getRaw();
-//        GridPane gPane = new GridPane();
-//        gPane.setGridLinesVisible(true);
-//        borderPane.setCenter(gPane);
-//        gPane.setAlignment(Pos.CENTER);
-//        gPane.getStyleClass().add("pane");
-		//Scene scene = new Four(borderPane, 1600, 900, Color.DARKGRAY);
+
+		//Loads in the teams from the file provided in the argument
 		ArrayList<Team> teams = null;
 		try {
-			teams = TeamLoader.teamLoader("src/teamList.txt");
+			teams = TeamLoader.teamLoader(parameters.get(0));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 
+		//Checks to see what number of teams is provided in the file
 		Scene scene = null;
 		if (teams.size() == 0) {
+			//Creates a simple scene and adds text showing there is no winner
 			scene = new Scene(scrollPane, 1600, 900, Color.DARKGRAY);
 			GridPane gridPane = new GridPane();
 			gridPane.setAlignment(Pos.CENTER);
@@ -67,6 +74,7 @@ public class Main extends Application {
 			gridPane.add(text, 0, 0);
 		}
 		if(teams.size() == 1){
+			//Creates a simple scene and shows that there are no games but one winner
 			scene = new Scene(scrollPane, 1600, 900, Color.DARKGRAY);
 			GridPane gridPane = new GridPane();
 			gridPane.setAlignment(Pos.CENTER);
@@ -74,13 +82,13 @@ public class Main extends Application {
 			Text text = new Text("Champion: " + teams.get(0).getTeamName());
 			gridPane.add(text, 0, 0);
 		}
-		if (teams.size() == 2)
+		if (teams.size() == 2) //Runs the program for two teams
 			scene = new TwoTeams(scrollPane, 1600, 900, Color.DARKGRAY, teams);
-		if (teams.size() == 4)
+		if (teams.size() == 4) //Runs the program for 4 teams
 			scene = new FourTeams(scrollPane, 1600, 900, Color.DARKGRAY, teams);
-		if (teams.size() == 8)
+		if (teams.size() == 8) //Runs the program for 8 teams
 			scene = new EightTeams(scrollPane, 1600, 900, Color.DARKGRAY, teams);
-		if (teams.size() == 16)
+		if (teams.size() == 16) //Runs the program for 16 teams
 			scene = new SixteenTeams(scrollPane, 1600, 900, Color.DARKGRAY, teams);
 		scene.getStylesheets().add("application/style.css");
 
@@ -89,6 +97,11 @@ public class Main extends Application {
 		primaryStage.show();
 	}
 
+	/**
+	 * Main method for the program
+	 * Starts the application
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}
