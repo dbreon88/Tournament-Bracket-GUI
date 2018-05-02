@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.BorderPane;
@@ -48,8 +49,14 @@ public class FourTeams extends Scene {
 		Team gameOneLoser = new Team();
 		Team gameTwoLoser = new Team();
 
+		//Create GridPane
 		GridPane gPane = new GridPane();
 		gPane.setGridLinesVisible(false);
+		
+		/*
+		 * The actual content of the scene will be stored in borderPane,
+		 * which is a BorderPane sitting in the root ScrollPane
+		 */
 		ScrollPane scrollPane = ((ScrollPane) root);
 		BorderPane borderPane = new BorderPane();
 		scrollPane.setContent(borderPane);
@@ -57,10 +64,12 @@ public class FourTeams extends Scene {
 		gPane.setAlignment(Pos.CENTER);
 		gPane.getStyleClass().add("pane");
 
+		//Add shadows
 		DropShadow shad = new DropShadow();
 		shad.setOffsetY(3.0f);
 		shad.setColor(Color.color(0.4f, 0.4f, 0.4f));
 
+		//Add title and instructions to borderPane
 		Text title = new Text("Tournament Bracket");
 		title.setId("fancytext");
 		title.setEffect(shad);
@@ -74,7 +83,11 @@ public class FourTeams extends Scene {
 		borderPane.setLeft((info));
 		borderPane.setAlignment(info, Pos.CENTER);
 
-		// Generate textboxes and labels to be added to screen
+		/*
+		 * 
+		 * Creates the "round" labels
+		 * 
+		 */
 		//Round 1 text
 		Text round1 = new Text("Round 1");
 		round1.setId("rounds");
@@ -85,6 +98,11 @@ public class FourTeams extends Scene {
 		round2.setId("rounds");
 		round2.minHeight(25);
 
+		/*
+		 * 
+		 * Creates the Team #X labels
+		 * 
+		 */
 		//Team 1 Text
 		Label label1 = new Label();
 		label1.setMinHeight(25);
@@ -105,6 +123,11 @@ public class FourTeams extends Scene {
 		label4.setMinHeight(25);
 		label4.setText(teams.get(2).getTeamName() + ": ");
 
+		/*
+		 * 
+		 * Create the labels for each winner for each game 
+		 * 
+		 * */
 		//Winer 1 Text
 		Label winner1 = new Label();
 		winner1.setMinHeight(25);
@@ -147,6 +170,11 @@ public class FourTeams extends Scene {
 		empty4.setMaxHeight(300);
 		empty4.setText(" ");
 
+		/*
+		 * 
+		 * Create the TextFields for user score entry
+		 * 
+		 */
 		TextField input1 = new TextField();
 		input1.setMaxHeight(20);
 		input1.setMaxWidth(200);
@@ -183,20 +211,29 @@ public class FourTeams extends Scene {
 		input6.setPromptText("Score 6");
 		input6.setFocusTraversable(false);
 
+		/*
+		 * 
+		 * Create the action listeners for submit buttons
+		 * First one is comment but all are same code just for different teams
+		 * 
+		 */
 		Button submit1 = new Button();
 		submit1.setText("Submit Score");
 		submit1.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
 				try{
+					//The game has been decided so we must update all GUI components accordingly
 					winner1.setText("Winner 1: ");
 
 					champ.setText("Champion: ");
 					runnerUp.setText("Runner Up: ");
 
+					//Retrieve scores entered by user. If scores are not numbers, NumberFormatException will be thrown
 					int team1score = Integer.parseInt(input1.getText().trim());
 					int team2score = Integer.parseInt(input2.getText().trim());
 
+					//Do different tasks depending on who won
 					if(team1score > team2score){
 						winner1.setText(teams.get(0).getTeamName());
 						gameOneLoser.setTeam(teams.get(3));
@@ -209,7 +246,9 @@ public class FourTeams extends Scene {
 						System.out.println("Teams may not have the same score");
 					}
 
-				} catch(NumberFormatException e){
+				}
+				//Score entered was not a number so the game cannot be scored
+				catch(NumberFormatException e){
 					System.out.println("Invalid Score");
 				}
 
@@ -282,10 +321,9 @@ public class FourTeams extends Scene {
 
 			}
 		});
-		// Add event handlers for the buttons
-
-
-		// Add components to the pane
+		/*
+		 * Add all elements to their respective positions in the grid
+		 */
 		gPane.add(round1, 0, 0);
 		gPane.add(round2, 3, 0);
 

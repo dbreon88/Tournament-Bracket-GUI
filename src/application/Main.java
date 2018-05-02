@@ -11,6 +11,7 @@ import javafx.geometry.Pos;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
@@ -38,7 +39,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 
 		primaryStage.setTitle("Bracket GUI Sample");
-		BorderPane borderPane = new BorderPane();
+		ScrollPane scrollPane = new ScrollPane();
 		final Parameters params = getParameters();
 		final List<String> parameters = params.getRaw();
 //        GridPane gPane = new GridPane();
@@ -49,7 +50,7 @@ public class Main extends Application {
 		//Scene scene = new Four(borderPane, 1600, 900, Color.DARKGRAY);
 		ArrayList<Team> teams = null;
 		try {
-			teams = TeamLoader.teamLoader(parameters.get(0));
+			teams = TeamLoader.teamLoader("src/teamList.txt");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
