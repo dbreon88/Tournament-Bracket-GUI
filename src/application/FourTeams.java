@@ -45,6 +45,9 @@ public class FourTeams extends Scene {
 	public FourTeams(Parent root, double width, double height, Paint fill, ArrayList<Team> teams) {
 		super(root, width, height, fill);
 
+		Team gameOneLoser = new Team();
+		Team gameTwoLoser = new Team();
+
 		GridPane gPane = new GridPane();
 		gPane.setGridLinesVisible(false);
 		BorderPane borderPane = ((BorderPane) root);
@@ -88,17 +91,17 @@ public class FourTeams extends Scene {
 		//Team 2 text
 		Label label2 = new Label();
 		label2.setMinHeight(25);
-		label2.setText(teams.get(1).getTeamName() + ": ");
+		label2.setText(teams.get(3).getTeamName() + ": ");
 
 		//Team 3 text
 		Label label3 = new Label();
 		label3.setMinHeight(25);
-		label3.setText(teams.get(2).getTeamName() + ": ");
+		label3.setText(teams.get(1).getTeamName() + ": ");
 
 		//Team 4 text
 		Label label4 = new Label();
 		label4.setMinHeight(25);
-		label4.setText(teams.get(3).getTeamName() + ": ");
+		label4.setText(teams.get(2).getTeamName() + ": ");
 
 		//Winer 1 Text
 		Label winner1 = new Label();
@@ -118,6 +121,10 @@ public class FourTeams extends Scene {
 		Label runnerUp = new Label();
 		runnerUp.setMinHeight(25);
 		runnerUp.setText("Runner Up:");
+
+		Label thirdPlace = new Label();
+		thirdPlace.setMinHeight(25);
+		thirdPlace.setText("Third: ");
 
 		Label empty1 = new Label();
 		empty1.setMinHeight(200);
@@ -190,8 +197,12 @@ public class FourTeams extends Scene {
 
 					if(team1score > team2score){
 						winner1.setText(teams.get(0).getTeamName());
+						gameOneLoser.setTeam(teams.get(3));
+						gameOneLoser.setTeamScore(team2score);
 					} else if(team1score < team2score){
-						winner1.setText(teams.get(1).getTeamName());
+						winner1.setText(teams.get(3).getTeamName());
+						gameOneLoser.setTeam(teams.get(0));
+						gameOneLoser.setTeamScore(team1score);
 					} else{
 						System.out.println("Teams may not have the same score");
 					}
@@ -218,9 +229,13 @@ public class FourTeams extends Scene {
 					int team2score = Integer.parseInt(input4.getText().trim());
 
 					if(team1score > team2score){
-						winner2.setText(teams.get(2).getTeamName());
+						winner2.setText(teams.get(1).getTeamName());
+						gameTwoLoser.setTeam(teams.get(2));
+						gameTwoLoser.setTeamScore(team2score);
 					} else if(team1score < team2score){
-						winner2.setText(teams.get(3).getTeamName());
+						winner2.setText(teams.get(2).getTeamName());
+						gameTwoLoser.setTeam(teams.get(1));
+						gameTwoLoser.setTeamScore(team1score);
 					} else{
 						System.out.println("Teams may not have the same score");
 					}
@@ -253,6 +268,11 @@ public class FourTeams extends Scene {
 					} else{
 						System.out.println("Teams may not have the same score");
 					}
+
+					if(gameOneLoser.getTeamScore() > gameTwoLoser.getTeamScore())
+						thirdPlace.setText("Third: " + gameOneLoser.getTeamName());
+					else
+						thirdPlace.setText("Third: " + gameTwoLoser.getTeamName());
 
 				} catch(NumberFormatException e){
 					System.out.println("Invalid Score");
@@ -294,7 +314,8 @@ public class FourTeams extends Scene {
 		gPane.add(input6, 4, 9);
 
 		gPane.add(champ, 6, 6);
-		gPane.add(runnerUp, 6, 12);
+		gPane.add(runnerUp, 6, 11);
+		gPane.add(thirdPlace, 6, 12);
 	}
 
 }

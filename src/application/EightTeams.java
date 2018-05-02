@@ -45,6 +45,9 @@ public class EightTeams extends Scene {
 	public EightTeams(Parent root, double width, double height, Paint fill, ArrayList<Team> teams) {
 		super(root, width, height, fill);
 
+		Team gameOneLoser = new Team();
+		Team gameTwoLoser = new Team();
+
 		GridPane gPane = new GridPane();
 		gPane.setGridLinesVisible(false);
 		BorderPane borderPane = ((BorderPane) root);
@@ -93,37 +96,37 @@ public class EightTeams extends Scene {
 		//Team 2 text
 		Label label2 = new Label();
 		label2.setMinHeight(25);
-		label2.setText(teams.get(1).getTeamName() + ": ");
+		label2.setText(teams.get(7).getTeamName() + ": ");
 
 		//Team 3 text
 		Label label3 = new Label();
 		label3.setMinHeight(25);
-		label3.setText(teams.get(2).getTeamName() + ": ");
+		label3.setText(teams.get(3).getTeamName() + ": ");
 
 		//Team 4 text
 		Label label4 = new Label();
 		label4.setMinHeight(25);
-		label4.setText(teams.get(3).getTeamName() + ": ");
+		label4.setText(teams.get(4).getTeamName() + ": ");
 
 		//Team 5 Text
 		Label label5 = new Label();
 		label5.setMinHeight(25);
-		label5.setText(teams.get(4).getTeamName() + ": ");
+		label5.setText(teams.get(1).getTeamName() + ": ");
 
 		//Team 6 text
 		Label label6 = new Label();
 		label6.setMinHeight(25);
-		label6.setText(teams.get(5).getTeamName() + ": ");
+		label6.setText(teams.get(6).getTeamName() + ": ");
 
 		//Team 7 text
 		Label label7 = new Label();
 		label7.setMinHeight(25);
-		label7.setText(teams.get(6).getTeamName() + ": ");
+		label7.setText(teams.get(2).getTeamName() + ": ");
 
 		//Team 8 text
 		Label label8 = new Label();
 		label8.setMinHeight(25);
-		label8.setText(teams.get(7).getTeamName() + ": ");
+		label8.setText(teams.get(5).getTeamName() + ": ");
 
 		//Winner 1 text
 		Label winner1 = new Label();
@@ -161,6 +164,10 @@ public class EightTeams extends Scene {
 		Label runnerUp = new Label();
 		runnerUp.setMinHeight(25);
 		runnerUp.setText("Runner Up:");
+
+		Label thirdPlace = new Label();
+		thirdPlace.setMinHeight(25);
+		thirdPlace.setText("Third: ");
 
 		TextField input1 = new TextField();
 		input1.setMaxHeight(20);
@@ -273,7 +280,7 @@ public class EightTeams extends Scene {
 					if(team1score > team2score){
 						winner1.setText(teams.get(0).getTeamName());
 					} else if(team1score < team2score){
-						winner1.setText(teams.get(1).getTeamName());
+						winner1.setText(teams.get(7).getTeamName());
 					} else{
 						System.out.println("Teams may not have the same score");
 					}
@@ -301,9 +308,9 @@ public class EightTeams extends Scene {
 					int team2score = Integer.parseInt(input4.getText().trim());
 
 					if(team1score > team2score){
-						winner2.setText(teams.get(2).getTeamName());
-					} else if(team1score < team2score){
 						winner2.setText(teams.get(3).getTeamName());
+					} else if(team1score < team2score){
+						winner2.setText(teams.get(4).getTeamName());
 					} else{
 						System.out.println("Teams may not have the same score");
 					}
@@ -331,9 +338,9 @@ public class EightTeams extends Scene {
 					int team2score = Integer.parseInt(input6.getText().trim());
 
 					if(team1score > team2score){
-						winner3.setText(teams.get(4).getTeamName());
+						winner3.setText(teams.get(1).getTeamName());
 					} else if(team1score < team2score){
-						winner3.setText(teams.get(5).getTeamName());
+						winner3.setText(teams.get(6).getTeamName());
 					} else{
 						System.out.println("Teams may not have the same score");
 					}
@@ -361,9 +368,9 @@ public class EightTeams extends Scene {
 					int team2score = Integer.parseInt(input8.getText().trim());
 
 					if(team1score > team2score){
-						winner4.setText(teams.get(6).getTeamName());
+						winner4.setText(teams.get(2).getTeamName());
 					} else if(team1score < team2score){
-						winner4.setText(teams.get(7).getTeamName());
+						winner4.setText(teams.get(5).getTeamName());
 					} else{
 						System.out.println("Teams may not have the same score");
 					}
@@ -391,8 +398,12 @@ public class EightTeams extends Scene {
 
 					if(team1score > team2score){
 						winner5.setText(winner1.getText());
+						gameOneLoser.setTeamName(winner2.getText());
+						gameOneLoser.setTeamScore(team2score);
 					} else if(team1score < team2score){
 						winner5.setText(winner2.getText());
+						gameOneLoser.setTeamName(winner1.getText());
+						gameOneLoser.setTeamScore(team1score);
 					} else{
 						System.out.println("Teams may not have the same score");
 					}
@@ -420,8 +431,12 @@ public class EightTeams extends Scene {
 
 					if(team1score > team2score){
 						winner6.setText(winner3.getText());
+						gameTwoLoser.setTeamName(winner4.getText());
+						gameTwoLoser.setTeamScore(team2score);
 					} else if(team1score < team2score){
 						winner6.setText(winner4.getText());
+						gameTwoLoser.setTeamName(winner3.getText());
+						gameTwoLoser.setTeamScore(team1score);
 					} else{
 						System.out.println("Teams may not have the same score");
 					}
@@ -454,6 +469,11 @@ public class EightTeams extends Scene {
 					} else{
 						System.out.println("Teams may not have the same score");
 					}
+
+					if(gameOneLoser.getTeamScore() > gameTwoLoser.getTeamScore())
+						thirdPlace.setText("Third: " + gameOneLoser.getTeamName());
+					else
+						thirdPlace.setText("Third: " + gameTwoLoser.getTeamName());
 
 				} catch(NumberFormatException e){
 					System.out.println("Invalid Score");
@@ -520,8 +540,8 @@ public class EightTeams extends Scene {
 		gPane.add(emptyCol3, 8, 0, 1, 16);
 
 		gPane.add(champ, 9, 9);
-		gPane.add(runnerUp, 9, 16);
-
+		gPane.add(runnerUp, 9, 15);
+		gPane.add(thirdPlace, 9, 16);
 
 
 	}
